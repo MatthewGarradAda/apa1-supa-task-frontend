@@ -1,19 +1,12 @@
 "use client"
-import Image from "next/image"
+// import Image from "next/image"
 import Link from "next/link"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { formatCurrency } from "@/lib/utils"
 
-// ** replace this with drizzle definition
-interface Product {
-  id: number
-  name: string
-  description: string | null
-  image: string | null
-  price: string  // drizzle maps product as string
-  sku: string 
-}
+import { Product } from "@/db/types"
+
 
 interface ProductsGridProps {
   products: Product[]
