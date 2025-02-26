@@ -1,0 +1,4 @@
+id,user_id,total_amount,address1,address2,city,postcode,created_at
+1,1,189.97,123 Main St,Apt 4B,New York,10001,2024-01-20 15:30:00
+2,2,399.99,456 Oak Road,Suite 100,Los Angeles,90001,2024-01-21 11:20:00
+3,3,59.99,789 Pine Street,,Chicago,60601,2024-01-22 14:45:00
