@@ -1,12 +1,12 @@
-import getUsers from "@/actions/getUsers";
+import {getProducts} from "@/actions";
 
-import Image from "next/image";
+import { ProductsGrid } from "@/components/products/ProductGrid";
 
 export default async function Home() {
-  const users = await getUsers();
+  const products = await getProducts();
   return (
     <div className="max-w-screen-xl mx-auto">
-      {JSON.stringify(users, undefined, 2)}
+      <ProductsGrid products={products} />
     </div>
   );
 }
