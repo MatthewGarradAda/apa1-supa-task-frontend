@@ -13,6 +13,7 @@
     "fmt": "prettier --write"
   },
   "dependencies": {
+    "@radix-ui/react-select": "^2.1.6",
     "@radix-ui/react-slot": "^1.1.2",
     "@tailwindcss/postcss": "^4.0.7",
     "@vercel/postgres": "^0.10.0",
