@@ -5,6 +5,7 @@ import { ShoppingCart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useBasket } from "./index"
 import { formatCurrency } from "@/lib/utils"
+import { motion, AnimatePresence } from "framer-motion"
 
 export function TopBar() {
   const { totalItems } = useBasket()
@@ -17,14 +18,24 @@ export function TopBar() {
         </Link>
 
         <div className="flex items-center gap-4">
-          {/* <div className="text-sm text-muted-foreground">
-            Cart Total: {formatCurrency(getTotalPrice())}
-          </div> */}
-          
           <Button variant="outline" size="sm" asChild>
             <Link href="/cart" className="flex items-center gap-2">
-              <ShoppingCart className="h-4 w-4" />
-              <span>{totalItems}</span>
+              <motion.div
+                key={`icon-${totalItems}`}
+                initial={{ scale: 1 }}
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 0.3 }}
+              >
+                <ShoppingCart className="h-4 w-4" />
+              </motion.div>
+              <motion.span
+                key={`num-${totalItems}`}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                {totalItems}
+              </motion.span>
             </Link>
           </Button>
         </div>
