@@ -11,7 +11,7 @@ export interface BasketContextType {
   removeProduct: (productId: number) => void;
   updateQuantity: (productId: number, quantity: number) => void;
   clearBasket: () => void;
-  getTotalItems: () => number;
+  totalItems: number;
   getTotalPrice: () => number;
 }
 

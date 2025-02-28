@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import { TopBar } from "@/components/cart/Topbar";
+
 import BasketProvider from "@/components/cart/BasketProvider";
 
 const geistSans = Geist({
@@ -30,6 +32,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <BasketProvider>
+          <TopBar />
           {children}
         </BasketProvider>
       </body>

@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { BasketProduct, BasketContext } from './context';
 import { Product } from '@/db/types';
 
@@ -51,9 +51,9 @@ export default function BasketProvider({ children }: { children: React.ReactNode
     setProducts([]);
   };
 
-  const getTotalItems = () => {
+  const totalItems = useMemo(() => {
     return products.reduce((total, product) => total + product.quantity, 0);
-  };
+  }, [products]);
 
   const getTotalPrice = () => {
     return products.reduce(
@@ -68,7 +68,7 @@ export default function BasketProvider({ children }: { children: React.ReactNode
     removeProduct,
     updateQuantity,
     clearBasket,
-    getTotalItems,
+    totalItems,
     getTotalPrice,
   };
 
