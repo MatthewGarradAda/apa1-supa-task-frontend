@@ -16,6 +16,7 @@ import { ShoppingCart } from "lucide-react"
 import Image from "next/image"
 
 import { formatCurrency } from "@/lib/utils"
+import { useBasket } from "../cart"
 
 type Product = {
     id: number;
@@ -31,12 +32,15 @@ interface ProductDetailsProps {
   product: Product
 }
 
+const MAX_QUANTITY = 10;
+
 export function ProductDetails({ product }: ProductDetailsProps) {
+  const {addProduct} = useBasket();
   const [quantity, setQuantity] = useState("1")
 
   const handleAddToCart = () => {
-    // Add to cart logic here
-    console.log(`Adding ${quantity} of ${product.name} to cart`)
+    // console.log(`Adding ${quantity} of ${product.name} to cart`)
+    addProduct(product, parseInt(quantity));
   }
 
   return (
@@ -81,9 +85,9 @@ export function ProductDetails({ product }: ProductDetailsProps) {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-                    <SelectItem key={num} value={num.toString()}>
-                      {num}
+                  {Array.from({length: MAX_QUANTITY}).map((_, num) => (
+                    <SelectItem key={num+1} value={(num+1).toString()}>
+                      {num+1}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -105,7 +109,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
             <h3 className="font-semibold">Product Details</h3>
             <div className="prose prose-sm text-muted-foreground">
               <ul className="list-disc list-inside space-y-1">
-                <li>Free shipping on orders over $100</li>
+                <li>Free shipping</li>
                 <li>30-day return policy</li>
                 <li>24/7 customer support</li>
               </ul>

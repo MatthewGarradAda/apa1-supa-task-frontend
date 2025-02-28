@@ -7,7 +7,7 @@ export interface BasketProduct extends Product {
 
 export interface BasketContextType {
   products: BasketProduct[];
-  addProduct: (product: Product) => void;
+  addProduct: (product: Product, quantity?: number) => void;
   removeProduct: (productId: number) => void;
   updateQuantity: (productId: number, quantity: number) => void;
   clearBasket: () => void;
