@@ -13,6 +13,9 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { ShoppingCart } from "lucide-react"
+import Image from "next/image"
+
+import { formatCurrency } from "@/lib/utils"
 
 type Product = {
     id: number;
@@ -41,11 +44,12 @@ export function ProductDetails({ product }: ProductDetailsProps) {
       <Card className="flex flex-col md:flex-row">
         {/* Product Image */}
         <div className="w-full md:w-1/2">
-          <div className="aspect-square overflow-hidden rounded-l-lg">
-            <img
-              src={product.image ?? "/placeholder.jpg"}
+          <div className="aspect-square relative overflow-hidden rounded-l-lg">
+            <Image
+              src={`/${product.image || "placeholder.jpg"}`}
               alt={product.name}
-              className="h-full w-full object-cover"
+              fill
+              className="object-cover object-top"
             />
           </div>
         </div>
@@ -55,10 +59,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
           <div className="space-y-2">
             <h1 className="text-3xl font-bold tracking-tight">{product.name}</h1>
             <p className="text-2xl font-semibold text-primary">
-              {new Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: 'USD',
-              }).format(parseFloat(product.price))}
+              {formatCurrency(parseFloat(product.price))}
             </p>
           </div>
 
