@@ -98,8 +98,8 @@ export default function CartPage() {
                   <span>Total</span>
                   <span>{formatCurrency(getTotalPrice())}</span>
                 </div>
-                <Button className="w-full">
-                  Proceed to Checkout
+                <Button className="w-full" asChild>
+                  <Link href="/checkout">Proceed to Checkout</Link>
                 </Button>
               </div>
             </Card>

@@ -26,9 +26,10 @@ export const discountCodes = pgTable('discount_codes', {
   createdAt: timestamp('created_at').defaultNow(),
 });
 
+// ** REMOVE TOTAL AMOUNT FROM THIS SCHEMA
 export const orders = pgTable('orders', {
   id: serial('id').primaryKey(),
-  userId: integer('user_id').references(() => users.id),
+  email: text('email').notNull(),
   totalAmount: decimal('total_amount', { precision: 10, scale: 2 }).notNull(),
   address1: text('address1').notNull(),
   address2: text('address2'),
