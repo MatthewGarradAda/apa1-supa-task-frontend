@@ -34,7 +34,7 @@ const formSchema = z.object({
 
 export default function CheckoutPage() {
   const router = useRouter();
-  const {products, totalItems, getTotalPrice} = useBasket();
+  const {products, clearBasket, getTotalPrice} = useBasket();
   const [isSubmitting, setIsSubmitting] = useState(false)
   
   const form = useForm<z.infer<typeof formSchema>>({
@@ -52,6 +52,7 @@ export default function CheckoutPage() {
     try {
       setIsSubmitting(true)
       const orderId = await createOrder(products, values)
+      clearBasket();
       router.push(`/orders/${orderId}`)
     } catch (error) {
       console.error('Error creating order:', error)
