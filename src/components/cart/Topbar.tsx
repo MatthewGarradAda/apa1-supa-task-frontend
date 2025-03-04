@@ -14,7 +14,20 @@ export function TopBar() {
     <div className="border-b bg-background">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="font-bold text-xl text-foreground">
-          Store Name
+          <svg width="200" height="60" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="15" width="40" height="35" rx="4" fill="#4A90E2"/>
+            <rect x="20" y="10" width="20" height="8" rx="2" fill="#4A90E2"/>
+            
+            <path d="M25 15 L35 15" stroke="#FFFFFF" strokeWidth="2"/>
+            
+            <text x="60" y="40" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="bold" fill="#333333">
+              STORE
+            </text>
+            
+            <text x="62" y="52" fontFamily="Arial, sans-serif" fontSize="10" fill="#666666">
+              fake products
+            </text>
+          </svg>
         </Link>
 
         <div className="flex items-center gap-4">

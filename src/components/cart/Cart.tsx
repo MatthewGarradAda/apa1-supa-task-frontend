@@ -14,7 +14,7 @@ export default function CartPage() {
 
   return (
     <div className="container mx-auto py-10">
-      <h1 className="text-3xl font-bold tracking-tight mb-8">Shopping Cart</h1>
+      <h1 className="text-4xl font-bold tracking-tight mb-8">Your Cart</h1>
 
       {products.length === 0 ? (
         <Card className="p-6">
