@@ -50,7 +50,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
         <div className="w-full md:w-1/2">
           <div className="aspect-square relative overflow-hidden rounded-l-lg">
             <Image
-              src={`/${product.image || "placeholder.jpg"}`}
+              src={product.image || "/placeholder.jpg"}
               alt={product.name}
               fill
               className="object-cover object-top"

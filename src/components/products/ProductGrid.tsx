@@ -24,7 +24,7 @@ export function ProductsGrid({ products }: ProductsGridProps) {
               <CardHeader className="p-0">
                 <div className="aspect-square relative overflow-hidden rounded-t-lg">
                   <Image
-                    src={`/${product.image || "placeholder.jpg"}`}
+                    src={product.image || "/placeholder.jpg"}
                     alt={product.name}
                     fill
                     className="object-cover object-top"
