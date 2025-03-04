@@ -21,6 +21,22 @@ export async function getProduct(id: number) {
     return db.select().from(products).where(eq(products.id, id));
 }
 
+export async function getOrderDetails(id: number) {
+  const [order] = await db.select().from(orders).where(eq(orders.id, id))
+
+  const items = await db.select({
+    quantity: orderItems.quantity,
+    unitPrice: orderItems.unitPrice,
+    productId: orderItems.productId,
+    product: products
+  })
+  .from(orderItems)
+  .leftJoin(products, eq(orderItems.productId, products.id))
+  .where(eq(orderItems.orderId, id))
+
+  return { order, items }
+}
+
 type CartProducts = {
     id: number
     quantity: number
