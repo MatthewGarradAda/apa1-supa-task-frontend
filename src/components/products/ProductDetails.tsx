@@ -12,6 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import ProductImage from "@/components/products/ProductImage"
 import { ShoppingCart } from "lucide-react"
 import Image from "next/image"
 
@@ -49,12 +50,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
         {/* Product Image */}
         <div className="w-full md:w-1/2">
           <div className="aspect-square relative overflow-hidden rounded-l-lg">
-            <Image
-              src={product.image || "/placeholder.jpg"}
-              alt={product.name}
-              fill
-              className="object-cover object-top"
-            />
+            <ProductImage product={product}/>
           </div>
         </div>
 

@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { useBasket } from "./index"
 import { formatCurrency } from "@/lib/utils"
+import ProductImage from "../products/ProductImage"
 
 export default function CartPage() {
   const { products, removeProduct, updateQuantity, getTotalPrice } = useBasket()
@@ -34,12 +35,7 @@ export default function CartPage() {
                 <div key={product.id}>
                   <div className="p-6 flex gap-6">
                     <div className="relative aspect-square h-24 rounded-md overflow-hidden">
-                      <Image
-                        src={product.image || "/placeholder.jpg"}
-                        alt={product.name}
-                        fill
-                        className="object-cover"
-                      />
+                      <ProductImage product={product}/>
                     </div>
                     
                     <div className="flex-1 space-y-1">

@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { formatCurrency } from "@/lib/utils"
-
+import ProductImage from "@/components/products/ProductImage"
 import { Product } from "@/db/types"
 
 
@@ -23,12 +23,7 @@ export function ProductsGrid({ products }: ProductsGridProps) {
             <Card className="h-full hover:shadow-lg transition-shadow">
               <CardHeader className="p-0">
                 <div className="aspect-square relative overflow-hidden rounded-t-lg">
-                  <Image
-                    src={product.image || "/placeholder.jpg"}
-                    alt={product.name}
-                    fill
-                    className="object-cover object-top"
-                  />
+                  <ProductImage product={product} />
                 </div>
               </CardHeader>
               <CardContent className="p-4">

@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
 import {deleteProduct} from "@/actions/admin"
+import ProductImage from "@/components/products/ProductImage"
 import { formatCurrency } from "@/lib/utils"
 import { Plus, Router, Trash2 } from "lucide-react" // Import icons
 import Image from "next/image"
@@ -47,18 +48,8 @@ export default function ProductsTable({products}: TableProps) {
           <TableBody>
             {products.map((product) => (
               <TableRow key={product.id}>
-                <TableCell>
-                  {product.image ? (
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      width={50}
-                      height={50}
-                      className="rounded-md object-cover"
-                    />
-                  ) : (
-                    <div className="w-[50px] h-[50px] bg-muted rounded-md" />
-                  )}
+                <TableCell className="relative w-[50px] h-[50px]">
+                  <ProductImage product={product} />
                 </TableCell>
                 <TableCell className="font-medium">{product.name}</TableCell>
                 <TableCell>{product.sku}</TableCell>
