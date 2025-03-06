@@ -4,7 +4,7 @@ import { Product } from '@/db/types'
 import { formSchema } from './schema'
 import { uploadImage } from './uploadImage'
 
-import { updateProduct } from '@/actions/admin'
+import { upsertProduct } from '@/actions/admin'
 
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -54,7 +54,7 @@ export function ProductForm({ product }: { product: Product }) {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       setIsSubmitting(true)
-      await updateProduct(product.id, values);
+      await upsertProduct(values, product.id);
       router.push('../')
     } catch (error) {
       console.error('Error updating product:', error)

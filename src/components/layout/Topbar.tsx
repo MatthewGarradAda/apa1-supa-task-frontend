@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { ShoppingCart } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useBasket } from "./index"
+import { useBasket } from "../cart/index"
 import { formatCurrency } from "@/lib/utils"
 import { motion, AnimatePresence } from "framer-motion"
 

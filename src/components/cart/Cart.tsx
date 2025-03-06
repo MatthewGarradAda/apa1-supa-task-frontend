@@ -35,7 +35,7 @@ export default function CartPage() {
                   <div className="p-6 flex gap-6">
                     <div className="relative aspect-square h-24 rounded-md overflow-hidden">
                       <Image
-                        src={`/${product.image || "placeholder.jpg"}`}
+                        src={product.image || "/placeholder.jpg"}
                         alt={product.name}
                         fill
                         className="object-cover"

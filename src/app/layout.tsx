@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import { TopBar } from "@/components/cart/Topbar";
+import { TopBar } from "@/components/layout/Topbar";
+import {Footer} from "@/components/layout/Footer";
 
 import BasketProvider from "@/components/cart/BasketProvider";
 
@@ -34,6 +35,7 @@ export default function RootLayout({
         <BasketProvider>
           <TopBar />
           {children}
+          <Footer />
         </BasketProvider>
       </body>
     </html>

@@ -1,4 +1,4 @@
 id,name,description,image,price,sku,created_at
-1,Logitech MX2,Professional mouse for productive engineers,mouse.jpg,59.99,MOUSE001,2024-01-10 08:00:00
-2,Mechanical Keyboard,Cherry MX Blue switches keyboard,keyboard.jpg,129.99,KB002,2024-01-10 08:30:00
-3,27" Monitor,4K HDR Gaming Monitor,monitor.jpg,399.99,MON003,2024-01-11 09:15:00
+1,Logitech MX2,Professional mouse for productive engineers,https://uyfwqpzagnashbxqluqj.supabase.co/storage/v1/object/public/images//mouse.jpg,59.99,MOUSE001,2024-01-10 08:00:00
+2,Mechanical Keyboard,Cherry MX Blue switches keyboard,https://uyfwqpzagnashbxqluqj.supabase.co/storage/v1/object/public/images//keyboard.jpg,129.99,KB002,2024-01-10 08:30:00
+3,27" Monitor,4K HDR Gaming Monitor,https://uyfwqpzagnashbxqluqj.supabase.co/storage/v1/object/public/images//monitor.jpg,399.99,MON003,2024-01-11 09:15:00
