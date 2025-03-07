@@ -10,11 +10,6 @@ const supabase = createClient(
 export async function uploadImage(file: File) {
   const filePath = `${new Date().toISOString()}-${file.name}`
 
-  const b = await supabase.storage.getBucket('images')
-  console.log(b)
-  const l = await supabase.storage.listBuckets();
-  console.log(l)
-
   const { data, error } = await supabase.storage
     .from('images')
     .upload(filePath, file, {
@@ -23,6 +18,7 @@ export async function uploadImage(file: File) {
     })
 
   if (error) {
+    console.error(error);
     throw new Error('Error uploading file')
   }
 
