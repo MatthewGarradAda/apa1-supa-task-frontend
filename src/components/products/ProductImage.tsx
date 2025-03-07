@@ -15,6 +15,7 @@ export default function ProductImage({product}: Props) {
             alt={product.name}
             fill
             className="object-cover object-top"
+            data-testid="product-image"
         />
     )
 }

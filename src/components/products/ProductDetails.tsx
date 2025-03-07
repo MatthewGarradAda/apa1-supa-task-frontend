@@ -57,15 +57,15 @@ export function ProductDetails({ product }: ProductDetailsProps) {
         {/* Product Info */}
         <CardContent className="w-full md:w-1/2 p-6 space-y-6">
           <div className="space-y-2">
-            <h1 className="text-3xl font-bold tracking-tight">{product.name}</h1>
-            <p className="text-2xl font-semibold text-primary">
+            <h1 className="text-3xl font-bold tracking-tight" data-testid="name">{product.name}</h1>
+            <p className="text-2xl font-semibold text-primary" data-testid="price">
               {formatCurrency(parseFloat(product.price))}
             </p>
           </div>
 
           <div className="space-y-2">
             <p className="text-muted-foreground">{product.description}</p>
-            <p className="text-sm text-muted-foreground">SKU: {product.sku}</p>
+            <p className="text-sm text-muted-foreground" data-testid="sku">SKU: {product.sku}</p>
           </div>
 
           <div className="space-y-4">
@@ -94,6 +94,7 @@ export function ProductDetails({ product }: ProductDetailsProps) {
               size="lg" 
               className="w-full"
               onClick={handleAddToCart}
+              data-testid="add-to-cart-button"
             >
               <ShoppingCart className="mr-2 h-4 w-4" />
               Add to Cart

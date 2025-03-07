@@ -10,6 +10,7 @@
     "generate": "drizzle-kit generate",
     "push": "drizzle-kit push",
     "test": "jest",
+    "test:ui": "playwright test",
     "fmt": "prettier --write"
   },
   "dependencies": {
@@ -40,6 +41,7 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.51.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^20",
     "@types/pg": "^8.11.11",

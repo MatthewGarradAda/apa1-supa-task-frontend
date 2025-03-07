@@ -14,5 +14,5 @@ Docs (supabase)
 
 Testing
 
-
+UI testing - critical path of product purchase 
 
