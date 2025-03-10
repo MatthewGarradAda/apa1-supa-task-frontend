@@ -6,7 +6,7 @@ A modern e-commerce solution built with Next.js 15, featuring real-time product 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/MatthewGarradAda/MatthewGarradAda-APA1-web.git
+git clone https://github.com/MatthewGarradAda/apa1-supa-task-frontend.git
 cd APA1-SUPA-TASK-FRONTEND
 ```
 
@@ -38,8 +38,8 @@ npm run start
 
 ```
 src/
-├── actions/         # Server actions for CRUD operations
-├── components/      # React components
+├── actions/        # Server actions for CRUD operations
+├── components/     # React components
 │   ├── cart/       # Shopping cart components
 │   ├── products/   # Product display components
 │   └── ui/         # Shared UI components
@@ -51,23 +51,16 @@ src/
 
 ## Key Features
 
-### Product Management
-- Dynamic product catalog
-- Real-time price updates
-- Cloud-based image storage
-- SKU tracking
-
 ### Shopping Experience
-- Responsive product grid
+- Dynamic product UI
 - Persistent shopping cart
-- Secure checkout process
+- Checkout and confirmation
 - Order confirmation emails
 
-### Admin Portal
+### Product Management
 - Protected admin routes
-- Inventory management
-- Order tracking
 - Product CRUD operations
+- Upload product images
 
 ## Database Schema
 
