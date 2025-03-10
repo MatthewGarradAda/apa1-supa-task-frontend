@@ -26,7 +26,7 @@ export default function SignIn() {
   }
 
   return (
-    <div className="flex mt-8 items-center justify-center">
+    <div className="flex my-8 items-center justify-center">
       <Card className="w-[400px] p-6">
         <h1 className="text-2xl font-bold mb-6">Sign In</h1>
         <form onSubmit={handleSignIn} className="space-y-4">
