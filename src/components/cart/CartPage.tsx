@@ -55,6 +55,7 @@ export default function CartPage(props: CartPageProps) {
 
                     <div className="flex items-center gap-2">
                       <Button
+                        data-testid="qty-dec"
                         variant="outline"
                         size="icon"
                         onClick={() => updateQuantity(product.id, Math.max(1, product.quantity - 1))}
@@ -63,6 +64,7 @@ export default function CartPage(props: CartPageProps) {
                       </Button>
                       <span className="w-8 text-center">{product.quantity}</span>
                       <Button
+                        data-testid="qty-asc"
                         variant="outline"
                         size="icon"
                         onClick={() => updateQuantity(product.id, product.quantity + 1)}
@@ -72,6 +74,7 @@ export default function CartPage(props: CartPageProps) {
                     </div>
 
                     <Button
+                      data-testid="rm"
                       variant="ghost"
                       size="icon"
                       className="text-destructive"

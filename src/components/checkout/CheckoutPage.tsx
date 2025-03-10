@@ -72,7 +72,7 @@ export default function CheckoutPage(props: CheckoutPageProps) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-8 lg:grid-cols-2">
           <div>
-            <Card className="p-6">
+            <Card className="p-6" data-testid="shipping-form">
               <h2 className="text-2xl font-semibold text-gray-900">
                 Shipping Details
               </h2>
@@ -154,6 +154,7 @@ export default function CheckoutPage(props: CheckoutPageProps) {
                     type="submit"
                     className="w-full"
                     disabled={isSubmitting}
+                    data-testid="submit-order"
                   >
                     {isSubmitting ? 'Processing...' : 'Complete Order'}
                   </Button>
@@ -163,16 +164,16 @@ export default function CheckoutPage(props: CheckoutPageProps) {
           </div>
 
           <div>
-            <Card className="p-6">
+            <Card className="p-6" data-testid="order-summary">
               <h2 className="text-2xl font-semibold text-gray-900">Order Summary</h2>
               <div className="mt-6 space-y-4">
                 {products.map((product) => (
-                  <div key={product.id} className="flex justify-between">
+                  <div key={product.id} className="flex justify-between" data-testid={`order-item-${product.id}`}>
                     <div>
                       <p className="font-medium">{product.name}</p>
                       <p className="text-sm text-gray-500">Qty: {product.quantity}</p>
                     </div>
-                    <p className="font-medium">
+                    <p className="font-medium" data-testid={`order-price-${product.id}`}>
                       {formatCurrency(parseFloat(product.price) * product.quantity)}
                     </p>
                   </div>
@@ -180,7 +181,7 @@ export default function CheckoutPage(props: CheckoutPageProps) {
                 <Separator className="my-4" />
                 <div className="flex justify-between">
                   <p className="font-semibold">Total</p>
-                  <p className="font-semibold">{formatCurrency(getTotalPrice())}</p>
+                  <p className="font-semibold" data-testid="order-total">{formatCurrency(getTotalPrice())}</p>
                 </div>
               </div>
             </Card>
