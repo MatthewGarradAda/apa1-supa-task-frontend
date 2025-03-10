@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { ProductsGrid } from '../../src/components/products/ProductGrid'
+import { ProductsGrid } from '@/components/products/ProductGrid'
 import { vi } from 'vitest'
 
 // Mock the next/image component

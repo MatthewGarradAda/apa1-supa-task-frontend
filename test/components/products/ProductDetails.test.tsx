@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { ProductDetails } from '../../src/components/products/ProductDetails'
+import { ProductDetails } from '@/components/products/ProductDetails'
 import { vi } from 'vitest'
 import userEvent from '@testing-library/user-event'
 
@@ -10,7 +10,7 @@ vi.mock('next/image', () => ({
 
 const addProductMock = vi.fn()
 
-vi.mock('../../src/components/cart', () => ({
+vi.mock('@/components/cart', () => ({
     useBasket: () => ({
       addProduct: addProductMock
     })
