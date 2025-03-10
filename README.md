@@ -1,6 +1,6 @@
 # E-Commerce Platform
 
-A modern e-commerce solution built with Next.js 15, featuring real-time product management, secure checkout, and automated order processing.
+A modern e-commerce solution built with Next.js 15, featuring dynamic product mangagement and secure admin portal.
 
 ## Quickstart
 
