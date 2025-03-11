@@ -1,6 +1,11 @@
 import { cn, formatCurrency } from '../../src/lib/utils'
 
 describe('cn (className utility)', () => {
+  it("should handle empty case", () => {
+    const result = cn("");
+    expect(result).toBe("");
+  })
+
   it('should merge className strings correctly', () => {
     const result = cn('text-red-500', 'bg-blue-300')
     expect(result).toBe('text-red-500 bg-blue-300')
