@@ -69,6 +69,19 @@ describe('BasketProvider', () => {
     expect(result.current.totalItems).toBe(0)
   })
 
+  it('handles remove unknown', () => {
+    const { result } = renderHook(() => useBasket(), {
+      wrapper: BasketProvider
+    })
+
+    act(() => {
+      result.current.removeProduct(1)
+    })
+
+    expect(result.current.products).toHaveLength(0)
+    expect(result.current.totalItems).toBe(0)
+  })
+
   it('clears the entire basket', () => {
     const { result } = renderHook(() => useBasket(), {
       wrapper: BasketProvider
