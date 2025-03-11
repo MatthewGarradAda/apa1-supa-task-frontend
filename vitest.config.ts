@@ -7,7 +7,11 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     setupFiles: './test/setup.ts',
-    globals: true
+    globals: true,
+    reporters: ['default', 'json'],
+    outputFile: {
+      'json': 'test-results.json'
+    }
   },
   resolve: {
     alias: {

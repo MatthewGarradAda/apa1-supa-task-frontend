@@ -45,11 +45,11 @@ export function ProductDetails({ product }: ProductDetailsProps) {
   }
 
   return (
-    <div className="container mx-auto py-10">
+    <div className="container mx-auto py-10 px-2">
       <Card className="flex flex-col md:flex-row">
         {/* Product Image */}
         <div className="w-full md:w-1/2">
-          <div className="aspect-square relative overflow-hidden rounded-l-lg">
+          <div className="aspect-square relative overflow-hidden rounded-tl-lg rounded-tr-lg md:rounded-tr-none md:rounded-bl-lg">
             <ProductImage product={product}/>
           </div>
         </div>
