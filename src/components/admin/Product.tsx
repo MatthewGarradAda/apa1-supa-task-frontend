@@ -64,10 +64,10 @@ export function ProductForm({ product }: { product: Product }) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen py-12 w-full">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <Card className="p-6">
-          <h1 className="text-2xl font-bold mb-6">Edit Product</h1>
+          <h1 className="text-2xl font-bold mb-6">{product.id ? "Edit Product" : "Add Product"}</h1>
           
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
