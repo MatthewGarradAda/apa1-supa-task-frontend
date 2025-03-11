@@ -79,7 +79,7 @@ npm run test
 ### Test Structure
 - Unit tests for utilities and context
 - Component tests for critical user paths
-- Integration tests for key features
+- Manual testing using the local environment
 
 ## Development
 
